@@ -91,4 +91,4 @@ lapply(output, sd)
 # organizing
 cbind(unlist(lapply(output, mean)),unlist(lapply(output, sd)))
 
-### Discussion: STAN generates similar output as lm() -- not that I know what that means right now.
+### Discussion: STAN generates similar output as lm() -- not that I know what that means right now. So, X2 and Y appear to be negatively correlated, to the degree that we can make a claim on so little data.
