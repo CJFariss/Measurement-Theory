@@ -1,0 +1,119 @@
+%% LyX 2.0.6 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,english,thmsb]{article}
+\usepackage{mathptmx}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{babel}
+\usepackage{graphicx}
+\usepackage{makecell}
+
+\begin{document}
+\begin{center}
+\textbf{Problem Set 1}\\
+\textbf{Measurement}\\
+Spring 2015
+\end{center}
+
+\begin{flushright}
+Xu Xu (Lee)
+\end{flushright}
+
+\begin{enumerate}
+%Q1
+\item Summary Statistics:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\diaghead{\theadfont Diag Column}%
+{Unit}{Vars} & N & Mean &  SD. & Median\\
+\hline 
+x1 & 25 &  42.40  & 27.89 & 35 \\\hline
+x2 & 25 & 53.28 & 25.03 & 52 \\\hline
+x3 & 25 & 54.20 & 27.26 & 57 \\\hline
+y & 25 & 1526.80 & 3460.68 & 593 \\\hline
+\end{tabular} 
+\end{center}
+
+\item The correlation matrix:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\diaghead{\theadfont Diag Column}%
+{Vars}{Vars} & x1 &  x2 &  x3 & y\\
+\hline 
+x1 & 1.0 &  -0.04 & -0.21& 0.05\\\hline
+x2 &  -0.04 & 1.0 & 0.35 & -0.43 \\\hline
+x3 & -0.21 & 0.35 & 1.0 & 0.09\\\hline
+y & 0.05 & -0.43 & 0.09 & 1.0\\\hline
+\end{tabular} 
+\end{center}
+
+\item  The following table displays the OLS results using $y$ as dependent variable. We can see that only the relationship between $x2$ and $y$ is statistically significant.
+
+\begin{center}
+\begin{tabular}{c|ccccccc}
+\hline 
+\head{\theadfont Column}%
+{}{} & (1) &  (2) &  (3) & (4) & (5) & (6) & (7)\\
+{}{} & y &  y &  y & y & y & y & y\\
+\hline 
+x1 & 5.990 & & & 3.821 & 8.761& & 11.18\\
+ & (25.84) & & & (23.81) & (26.89) & & (23.74)\\
+x2 &  & -60.27** & & -60.10** & & -73.96**&-74.45** \\
+ &  & (25.95) & & (26.53) & & (27.14) & (27.65) \\
+x3 & & & 11.50 & & 13.40 & 35.52 & 38.11\\
+& & & (26.36)& & (27.51) & (24.92) & (25.95)\\
+CONSTANT & 1,273 & 4,738*** & 903.4 & 4,567** & 429.1 & 3,542* &2,954\\
+ & (1,303) & (1,522) & (1,593) & (1,886) & (2,181) & (1,709) & (2,141)  \\
+ &  & & &  & &  &\\
+Observations & 25 & 25 & 25 & 25 & 25 & 25 & 25\\
+R-squared & 0.002 &0.190&0.008&0.191&0.013&0.259&0.266\\
+\hline
+&Standard &errors &in&parentheses&height\\
+&***p<0.01&**p<0.05&*p<0.1\\
+\end{tabular} 
+\end{center}
+\end{enumerate}
+
+\begin{enumerate}
+\item R Code:\\
+$library(gdata)\\
+setwd("/Users/Lee/Dropbox/Git")\\
+prbm1 <- read.csv("_data_problem_Set_01.csv",header=T,sep=",",quote="",dec=".",fill = T,comment.char="")\\
+prbm1\\
+rgs <- lm(prbm1$y ~ prbm1$x1+prbm1$x2+prbm1$x3)\\
+summary(rgs)\\
+cor (prbm1)\\
+require(psych)\\
+describe(prbm1)\\
+summary(prbm1)$\\
+\item Stata Code:\\
+$cd "/Users/Lee/Dropbox/Git/"\\
+insheet unit x1 x2 x3 y using"/Users/Lee/Dropbox/Git/_data_problem_Set_01.csv"\\
+reg y x1\\
+outreg2 using "results.xls",replace\\
+reg y x2\\
+outreg2 using "results.xls"\\
+reg y x3\\
+outreg2 using "results.xls"\\
+reg y x1 x2\\
+outreg2 using "results.xls"\\
+reg y x1 x3\\
+outreg2 using "results.xls"\\
+reg y x2 x3\\
+outreg2 using "results.xls"\\
+reg y x1 x2 x3\\
+outreg2 using "results.xls"$\\
+\end{enumerate}
+
+\end{document}
+
