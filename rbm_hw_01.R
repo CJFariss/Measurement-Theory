@@ -53,3 +53,21 @@ l2.freq = lm(log.y ~ data$x1 + data$x2 + data$x3 + x1.x2 + x1.x3 + x2.x3)
 summary(l2.freq)
 
 # doesn't look like there are diadic interactions and all other significants disappear
+
+
+#### SOLUTION ####
+
+# These data are derived from the gravitational force equation: 
+# F(g) = gravitationalConstant* ((mass1 * mass2) / radius^2)
+
+# This data set was used as a data exploration project by the Professor; it was given to students and they were instructed
+# to play around with it for ~1 or 2 hours and look for statistical relationships.
+
+logX1 = ln(data$x1)
+logX2 = ln(data$x2)
+logX3 = ln(data$x3)
+
+sol = lm(formula = data$y ~ logX1 + logX2 + logX3)
+summary(sol)
+
+# And now we have an R^2 statistic of 1. Why can't social science data do this?
