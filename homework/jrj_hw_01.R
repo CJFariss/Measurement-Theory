@@ -38,16 +38,15 @@ summary(mod.8)
 
 lmlist <- list(summary(mod.1)$r.squared,summary(mod.2)$r.squared,summary(mod.3)$r.squared,summary(mod.4)$r.squared,summary(mod.5)$r.squared,summary(mod.6)$r.squared,summary(mod.7)$r.squared,summary(mod.8)$r.squared)
 
+#Log Everything Model
+mod.10 <- lm(log(y) ~ log(x1) + log(x2) + log(x3))
 
-
-
-
-
-
-
-
-
-
-
-
-print(Sys.time() - time1)
+#Polywog Model
+fit2 <- polywog(y ~ x1 + x2 + x3,
+                data = data,
+                degree = 2,
+                boot = 100,
+                thresh = 1e-4)
+print(fit2)
+summary(fit2)
+plot(fit2)
