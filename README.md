@@ -1,4 +1,4 @@
-This is the repository for [Measurement Theory](Spring 2015 Syllabus), taught by [Christopher J. Fariss](http://cfariss.com).
+This is the repository for [2017 Measurement Theory]() and [2015 Measurement Theory](http://cfariss.com/documents/PSUMeasurement_Spring2015.pdf), taught by [Christopher J. Fariss](http://cfariss.com).
 
 ## Introduction
 Political scientists are often interested in explaining concepts that are difficult or impossible to observe. Examples of unobservable concepts include political knowledge, political ideology, democracy, respect for human rights, or inequality. Even concepts that are based on directly observable information such as the number of individuals that reside in a state, the number of individuals killed during a conflict, or the level of economic output are often not easily observed. A key challenge for political scientists and social scientists generally, is creating models that can measure these concepts while also capturing the uncertainty associated with the processes by which they are measured. 
