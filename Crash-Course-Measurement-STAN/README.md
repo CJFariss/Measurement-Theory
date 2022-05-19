@@ -1,6 +1,9 @@
 # Crash-Course-Measurement-STAN
 
 ## Introduction
+This course will provide an introduction to latent variable models generally with a practical focus on implementing them in R using the rstan library. The course emphasizes the use of construct validity to assess new and existing measures in applied research. We will implement several latent variable model examples together during the 2.5-3 hour workshop. Students are encouraged to familiarize themselves with the RSTAN website: http://mc-stan.org/rstan/.
+
+## Course Background
 Political scientists are often interested in explaining concepts that are difficult or impossible to observe. Examples of unobservable concepts include political knowledge, political ideology, democracy, respect for human rights, or inequality. Even concepts that are based on directly observable information such as the number of individuals that reside in a state, the number of individuals killed during a conflict, or the level of economic output are often not easily observed. A key challenge for political scientists and social scientists generally, is creating models that can measure these concepts while also capturing the uncertainty associated with the processes by which they are measured. 
 
 This course will provide an introduction to measurement models generally with specific focus on Bayesian measurement models and measurement models that make use of text data. The course will emphasize the use of construct validity to assess new and existing measures in applied research. I motivate the development of the models introduced in this class with a discussion of the Bayesian perspective on the relationship between data and model parameters. This perspective is useful because it shifts the burden of validity from the primary source documentation and raw data to the model parameters that bind these diverse pieces of information together.
