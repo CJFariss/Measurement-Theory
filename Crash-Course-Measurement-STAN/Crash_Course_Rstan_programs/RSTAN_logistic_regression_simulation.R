@@ -39,7 +39,8 @@ model <- "
         beta ~ normal(0,10);
     
         // likelihood (link data to some combination of parameters and more data)
-        y ~ bernoulli_logit(alpha + beta * x);
+        y ~ bernoulli_logit(alpha + beta * x); // log-likelihood
+        //target += bernoulli_logit_lpmf(y | alpha + beta*x); // log-likelihood
     }
 generated quantities {
     // posterior predictions

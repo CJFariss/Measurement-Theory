@@ -42,9 +42,8 @@ model <- "
         mu ~ normal(0,1);
         sigma ~ normal(0,3);
         
-        for(i in 1:n){
-            y[i] ~ normal(mu_star, sigma);
-        }
+        y ~ normal(mu, sigma);
+
     }
     generated quantities {
         // posterior predictions
