@@ -31,7 +31,7 @@ parameters {
 }
 
 model {
-    #mu ~ normal(0,1);
+    //mu ~ normal(0,1);
     mu ~ std_normal();
 }
 "
