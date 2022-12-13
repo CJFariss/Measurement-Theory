@@ -39,7 +39,7 @@ model <- "
         // by default the priors on the parameters are flat unless we provide more information (see the other examples)
         // likelihood (link data to some combination of parameters and more data)
         
-        mu ~ normal(0,1);
+        mu ~ normal(0,0.1);
         sigma ~ normal(0,3);
         
         for(i in 1:n){
@@ -61,7 +61,7 @@ model <- "
 
 
 ## set data for simulation
-#y <- 1:5
+y <- 1:5
 y <- rep(1:5,200)
 
 n <- length(y)

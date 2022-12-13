@@ -63,7 +63,7 @@ x <- rnorm(n,0,1)
 alpha <- 1.25
 beta <- 2.50
 
-## simulate a dependent variable with normally distribtued error using the data and parameter values defined above
+## simulate a dependent variable with normally distributed error using the data and parameter values defined above
 error <- rnorm(n)
 y <- alpha + beta * x + error
 
@@ -81,7 +81,7 @@ time1 <- Sys.time()
 # fit stan model
 fit <- stan(model_code = model, data = data_list, iter = 1000, chains = 4)
 
-## calcuate the duration of the program file up to this point
+## calculate the duration of the program file up to this point
 print(Sys.time() - time1)
 
 ## extract draws from stan model object (creates a list object)
