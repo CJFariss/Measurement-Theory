@@ -1,0 +1,46 @@
+---
+title: "Set01Answer"
+author: "Yaoyao"
+date: "January 27, 2015"
+output: pdf_document
+---
+
+```{r}
+library(foreign)
+set1<-read.csv("~/Documents/Data/Set01.csv")
+names(set1)
+x11()
+split.screen(c(1,2))
+screen(1)
+boxplot(set1$y,main="y")
+screen(2)
+boxplot(set1$x1,set1$x2,set1$x3,main="x1 x2 x3")
+```
+
+y and x1 x2 x3 are in different scale. Y has a large outlier observation. So I delete the outlier first.
+
+``` {r}
+set1$y[set1$y > quantile(set1$y,probs=c(.25,.75))[2]+1.5*IQR(set1$y)]<-NA
+```
+
+I then plot descriptive scatter plots: 
+```{r}
+x11()
+split.screen(c(2,2))
+screen(1)
+plot(set1$y~set1$x1,pch=20)
+screen(2)
+plot(set1$y~set1$x2,pch=20)
+screen(3)
+plot(set1$y~set1$x3,pch=20)
+```
+
+It seems x1 and y are positively correlated, x2 and y are negatively correlated. And the relationship between x3 and y is unclear. I then did a simple linear regression: 
+```{r}
+model<-lm(set1$y~set1$x1+set1$x2+set1$x3)
+summary(model)
+```
+
+The results confirm what we saw in the scatter plots.All three independent variables are significantly correlated with y. 
+
+
